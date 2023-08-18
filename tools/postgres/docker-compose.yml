@@ -1,0 +1,19 @@
+version: '3.2'
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ante_db
+      POSTGRES_DEFAULT_REPLICA_IDENTITY: database
+#    volumes:
+#      - ./data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    command:
+      - postgres
+      - -c
+      - wal_level=logical

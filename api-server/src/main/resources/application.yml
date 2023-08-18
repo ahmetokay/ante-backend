@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: api-server
+  config:
+    import: optional:configserver:http://${CONFIG_SERVER:localhost}:8888
+  profiles:
+    active: default

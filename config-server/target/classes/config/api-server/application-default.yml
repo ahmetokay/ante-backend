@@ -1,0 +1,63 @@
+server:
+  port: 5055
+  servlet:
+    context-path: /api
+application:
+  security:
+    jwt:
+      expiration: 86400000
+      refresh-token:
+        expiration: 604800000
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+    permitted-path-list:
+      - /users/reset-password
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    registryFetchIntervalSeconds: 3
+    serviceUrl:
+      defaultZone: http://ante:ante123@localhost:8761/eureka
+  instance:
+    preferIpAddress: true
+spring:
+  application:
+    name: api-server
+  datasource:
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/ante_db
+    username: postgres
+    hikari:
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+  elasticsearch:
+    uris: localhost:9200
+  jackson:
+    default-property-inclusion: non_null
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        enable_lazy_load_no_trans: true
+      org:
+        hibernate:
+          envers:
+            audit_table_suffix: _audit
+            revisionOnCollectionChange: true
+            revision_on_collection_change: true
+    show-sql: false
+  main:
+    banner-mode: false
+  sql:
+    init:
+      mode: always
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+access-log-enabled: true

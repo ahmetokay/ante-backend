@@ -1,0 +1,1529 @@
+{
+	"info": {
+		"_postman_id": "7be9827e-8722-4cf9-95e3-39c1564fb7ba",
+		"name": "Ante-Backend",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7029105"
+	},
+	"item": [
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Role - list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filters\": [\r\n        {\r\n            \"fieldName\": \"name\",\r\n            \"value\": \"role1\",\r\n            \"operation\": \"equals\"\r\n        }\r\n    ],\r\n    \"query\": {\r\n        \"privilegeList\": [\r\n            {\r\n                \"id\": 300100\r\n            }\r\n        ]\r\n    },\r\n    \"pageable\": {\r\n        \"sortField\": \"id\",\r\n        \"sortOrder\": \"DESC\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/roles/list",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"roles",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role - list all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5055/api/roles/list-all",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"roles",
+								"list-all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role - list custom query",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"username\": \"ahmet\"\r\n    },\r\n    \"pageable\": {\r\n        \"sortField\": \"id\",\r\n        \"sortOrder\": \"DESC\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/roles/list",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"roles",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role - find",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5055/api/roles/role/16",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"roles",
+								"role",
+								"16"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role - save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Ahmet\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/roles/role",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"roles",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role - update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"active\": true,\r\n    \"createDate\": \"2023-06-20T12:20:30.930+00:00\",\r\n    \"createUser\": 1,\r\n    \"name\": \"Ahmet 55 55\",\r\n    \"privilegeList\": [\r\n            {\r\n                \"id\": 100000,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.063+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"UM.*\",\r\n                \"title\": \"Kullanıcı Yönetimi\",\r\n                \"childPrivilegeList\": [\r\n                    {\r\n                        \"id\": 100100,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.064+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"UM.01.*\",\r\n                        \"title\": \"Kullanıcı Yönetimi - 1\",\r\n                        \"parentId\": 100000,\r\n                        \"childPrivilegeList\": [\r\n                            {\r\n                                \"id\": 100101,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.064+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"UM.01.01\",\r\n                                \"title\": \"Kullanıcı Yönetimi - Listeleme\",\r\n                                \"parentId\": 100100,\r\n                                \"childPrivilegeList\": []\r\n                            },\r\n                            {\r\n                                \"id\": 100102,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.065+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"UM.01.02\",\r\n                                \"title\": \"Kullanıcı Yönetimi - Okuma\",\r\n                                \"parentId\": 100100,\r\n                                \"childPrivilegeList\": []\r\n                            },\r\n                            {\r\n                                \"id\": 100103,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.066+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"UM.01.03\",\r\n                                \"title\": \"Kullanıcı Yönetimi - Ekleme\",\r\n                                \"parentId\": 100100,\r\n                                \"childPrivilegeList\": []\r\n                            },\r\n                            {\r\n                                \"id\": 100104,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.067+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"UM.01.04\",\r\n                                \"title\": \"Kullanıcı Yönetimi - Güncelleme\",\r\n                                \"parentId\": 100100,\r\n                                \"childPrivilegeList\": []\r\n                            },\r\n                            {\r\n                                \"id\": 100105,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.067+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"UM.01.05\",\r\n                                \"title\": \"Kullanıcı Yönetimi - Silme\",\r\n                                \"parentId\": 100100,\r\n                                \"childPrivilegeList\": []\r\n                            },\r\n                            {\r\n                                \"id\": 100106,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.068+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"UM.01.06\",\r\n                                \"title\": \"Kullanıcı Yönetimi - Dışa Aktar\",\r\n                                \"parentId\": 100100,\r\n                                \"childPrivilegeList\": []\r\n                            },\r\n                            {\r\n                                \"id\": 100107,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.069+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"UM.01.07\",\r\n                                \"title\": \"Kullanıcı Yönetimi - Tarihçe\",\r\n                                \"parentId\": 100100,\r\n                                \"childPrivilegeList\": []\r\n                            }\r\n                        ]\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 100100,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.064+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"UM.01.*\",\r\n                \"title\": \"Kullanıcı Yönetimi - 1\",\r\n                \"parentId\": 100000,\r\n                \"childPrivilegeList\": [\r\n                    {\r\n                        \"id\": 100101,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.064+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"UM.01.01\",\r\n                        \"title\": \"Kullanıcı Yönetimi - Listeleme\",\r\n                        \"parentId\": 100100,\r\n                        \"childPrivilegeList\": []\r\n                    },\r\n                    {\r\n                        \"id\": 100102,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.065+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"UM.01.02\",\r\n                        \"title\": \"Kullanıcı Yönetimi - Okuma\",\r\n                        \"parentId\": 100100,\r\n                        \"childPrivilegeList\": []\r\n                    },\r\n                    {\r\n                        \"id\": 100103,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.066+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"UM.01.03\",\r\n                        \"title\": \"Kullanıcı Yönetimi - Ekleme\",\r\n                        \"parentId\": 100100,\r\n                        \"childPrivilegeList\": []\r\n                    },\r\n                    {\r\n                        \"id\": 100104,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.067+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"UM.01.04\",\r\n                        \"title\": \"Kullanıcı Yönetimi - Güncelleme\",\r\n                        \"parentId\": 100100,\r\n                        \"childPrivilegeList\": []\r\n                    },\r\n                    {\r\n                        \"id\": 100105,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.067+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"UM.01.05\",\r\n                        \"title\": \"Kullanıcı Yönetimi - Silme\",\r\n                        \"parentId\": 100100,\r\n                        \"childPrivilegeList\": []\r\n                    },\r\n                    {\r\n                        \"id\": 100106,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.068+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"UM.01.06\",\r\n                        \"title\": \"Kullanıcı Yönetimi - Dışa Aktar\",\r\n                        \"parentId\": 100100,\r\n                        \"childPrivilegeList\": []\r\n                    },\r\n                    {\r\n                        \"id\": 100107,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.069+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"UM.01.07\",\r\n                        \"title\": \"Kullanıcı Yönetimi - Tarihçe\",\r\n                        \"parentId\": 100100,\r\n                        \"childPrivilegeList\": []\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 100101,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.064+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"UM.01.01\",\r\n                \"title\": \"Kullanıcı Yönetimi - Listeleme\",\r\n                \"parentId\": 100100,\r\n                \"childPrivilegeList\": []\r\n            },\r\n            {\r\n                \"id\": 100102,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.065+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"UM.01.02\",\r\n                \"title\": \"Kullanıcı Yönetimi - Okuma\",\r\n                \"parentId\": 100100,\r\n                \"childPrivilegeList\": []\r\n            },\r\n            {\r\n                \"id\": 100103,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.066+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"UM.01.03\",\r\n                \"title\": \"Kullanıcı Yönetimi - Ekleme\",\r\n                \"parentId\": 100100,\r\n                \"childPrivilegeList\": []\r\n            },\r\n            {\r\n                \"id\": 100104,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.067+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"UM.01.04\",\r\n                \"title\": \"Kullanıcı Yönetimi - Güncelleme\",\r\n                \"parentId\": 100100,\r\n                \"childPrivilegeList\": []\r\n            },\r\n            {\r\n                \"id\": 100105,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.067+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"UM.01.05\",\r\n                \"title\": \"Kullanıcı Yönetimi - Silme\",\r\n                \"parentId\": 100100,\r\n                \"childPrivilegeList\": []\r\n            },\r\n            {\r\n                \"id\": 100106,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.068+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"UM.01.06\",\r\n                \"title\": \"Kullanıcı Yönetimi - Dışa Aktar\",\r\n                \"parentId\": 100100,\r\n                \"childPrivilegeList\": []\r\n            },\r\n            {\r\n                \"id\": 100107,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.069+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"UM.01.07\",\r\n                \"title\": \"Kullanıcı Yönetimi - Tarihçe\",\r\n                \"parentId\": 100100,\r\n                \"childPrivilegeList\": []\r\n            },\r\n            {\r\n                \"id\": 200000,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.070+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"RM.*\",\r\n                \"title\": \"Rol Yönetimi\",\r\n                \"childPrivilegeList\": [\r\n                    {\r\n                        \"id\": 200100,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.070+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"RM.01.*\",\r\n                        \"title\": \"Rol Yönetimi - 1\",\r\n                        \"parentId\": 200000,\r\n                        \"childPrivilegeList\": [\r\n                            {\r\n                                \"id\": 200101,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.071+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"RM.01.01\",\r\n                                \"title\": \"Rol Yönetimi - Listeleme\",\r\n                                \"parentId\": 200100,\r\n                                \"childPrivilegeList\": []\r\n                            },\r\n                            {\r\n                                \"id\": 200102,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.072+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"RM.01.02\",\r\n                                \"title\": \"Rol Yönetimi - Okuma\",\r\n                                \"parentId\": 200100,\r\n                                \"childPrivilegeList\": []\r\n                            },\r\n                            {\r\n                                \"id\": 200103,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.073+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"RM.01.03\",\r\n                                \"title\": \"Rol Yönetimi - Ekleme\",\r\n                                \"parentId\": 200100,\r\n                                \"childPrivilegeList\": []\r\n                            },\r\n                            {\r\n                                \"id\": 200104,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.074+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"RM.01.04\",\r\n                                \"title\": \"Rol Yönetimi - Güncelleme\",\r\n                                \"parentId\": 200100,\r\n                                \"childPrivilegeList\": []\r\n                            },\r\n                            {\r\n                                \"id\": 200105,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.075+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"RM.01.05\",\r\n                                \"title\": \"Rol Yönetimi - Silme\",\r\n                                \"parentId\": 200100,\r\n                                \"childPrivilegeList\": []\r\n                            },\r\n                            {\r\n                                \"id\": 200106,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.075+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"RM.01.06\",\r\n                                \"title\": \"Rol Yönetimi - Dışa Aktar\",\r\n                                \"parentId\": 200100,\r\n                                \"childPrivilegeList\": []\r\n                            },\r\n                            {\r\n                                \"id\": 200107,\r\n                                \"active\": true,\r\n                                \"createDate\": \"2023-07-08T18:33:28.076+00:00\",\r\n                                \"createUser\": 1,\r\n                                \"name\": \"RM.01.07\",\r\n                                \"title\": \"Rol Yönetimi - Tarihçe\",\r\n                                \"parentId\": 200100,\r\n                                \"childPrivilegeList\": []\r\n                            }\r\n                        ]\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 200100,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.070+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"RM.01.*\",\r\n                \"title\": \"Rol Yönetimi - 1\",\r\n                \"parentId\": 200000,\r\n                \"childPrivilegeList\": [\r\n                    {\r\n                        \"id\": 200101,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.071+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"RM.01.01\",\r\n                        \"title\": \"Rol Yönetimi - Listeleme\",\r\n                        \"parentId\": 200100,\r\n                        \"childPrivilegeList\": []\r\n                    },\r\n                    {\r\n                        \"id\": 200102,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.072+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"RM.01.02\",\r\n                        \"title\": \"Rol Yönetimi - Okuma\",\r\n                        \"parentId\": 200100,\r\n                        \"childPrivilegeList\": []\r\n                    },\r\n                    {\r\n                        \"id\": 200103,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.073+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"RM.01.03\",\r\n                        \"title\": \"Rol Yönetimi - Ekleme\",\r\n                        \"parentId\": 200100,\r\n                        \"childPrivilegeList\": []\r\n                    },\r\n                    {\r\n                        \"id\": 200104,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.074+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"RM.01.04\",\r\n                        \"title\": \"Rol Yönetimi - Güncelleme\",\r\n                        \"parentId\": 200100,\r\n                        \"childPrivilegeList\": []\r\n                    },\r\n                    {\r\n                        \"id\": 200105,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.075+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"RM.01.05\",\r\n                        \"title\": \"Rol Yönetimi - Silme\",\r\n                        \"parentId\": 200100,\r\n                        \"childPrivilegeList\": []\r\n                    },\r\n                    {\r\n                        \"id\": 200106,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.075+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"RM.01.06\",\r\n                        \"title\": \"Rol Yönetimi - Dışa Aktar\",\r\n                        \"parentId\": 200100,\r\n                        \"childPrivilegeList\": []\r\n                    },\r\n                    {\r\n                        \"id\": 200107,\r\n                        \"active\": true,\r\n                        \"createDate\": \"2023-07-08T18:33:28.076+00:00\",\r\n                        \"createUser\": 1,\r\n                        \"name\": \"RM.01.07\",\r\n                        \"title\": \"Rol Yönetimi - Tarihçe\",\r\n                        \"parentId\": 200100,\r\n                        \"childPrivilegeList\": []\r\n                    }\r\n                ]\r\n            },\r\n            {\r\n                \"id\": 200101,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.071+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"RM.01.01\",\r\n                \"title\": \"Rol Yönetimi - Listeleme\",\r\n                \"parentId\": 200100,\r\n                \"childPrivilegeList\": []\r\n            },\r\n            {\r\n                \"id\": 200102,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.072+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"RM.01.02\",\r\n                \"title\": \"Rol Yönetimi - Okuma\",\r\n                \"parentId\": 200100,\r\n                \"childPrivilegeList\": []\r\n            },\r\n            {\r\n                \"id\": 200103,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.073+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"RM.01.03\",\r\n                \"title\": \"Rol Yönetimi - Ekleme\",\r\n                \"parentId\": 200100,\r\n                \"childPrivilegeList\": []\r\n            },\r\n            {\r\n                \"id\": 200104,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.074+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"RM.01.04\",\r\n                \"title\": \"Rol Yönetimi - Güncelleme\",\r\n                \"parentId\": 200100,\r\n                \"childPrivilegeList\": []\r\n            },\r\n            {\r\n                \"id\": 200105,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.075+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"RM.01.05\",\r\n                \"title\": \"Rol Yönetimi - Silme\",\r\n                \"parentId\": 200100,\r\n                \"childPrivilegeList\": []\r\n            },\r\n            {\r\n                \"id\": 200106,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.075+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"RM.01.06\",\r\n                \"title\": \"Rol Yönetimi - Dışa Aktar\",\r\n                \"parentId\": 200100,\r\n                \"childPrivilegeList\": []\r\n            },\r\n            {\r\n                \"id\": 200107,\r\n                \"active\": true,\r\n                \"createDate\": \"2023-07-08T18:33:28.076+00:00\",\r\n                \"createUser\": 1,\r\n                \"name\": \"RM.01.07\",\r\n                \"title\": \"Rol Yönetimi - Tarihçe\",\r\n                \"parentId\": 200100,\r\n                \"childPrivilegeList\": []\r\n            }\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/roles/role",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"roles",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role - delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"active\": true,\r\n    \"createDate\": \"2023-06-20T12:20:30.930+00:00\",\r\n    \"createUser\": 1,\r\n    \"username\": \"ahmet1\",\r\n    \"password\": \"123\",\r\n    \"name\": \"Ahmet 55 55\",\r\n    \"surname\": \"Okay 55 55\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/roles/6809c257-b0fe-4817-900d-3be9cb563d99",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"roles",
+								"6809c257-b0fe-4817-900d-3be9cb563d99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role - history",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5055/api/roles/history/2",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"roles",
+								"history",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Role - export",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filters\": [\r\n    ],\r\n    \"pageable\": {\r\n        \"sortField\": \"id\",\r\n        \"sortOrder\": \"DESC\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/roles/export?language=TR&exportType=EXCEL",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"roles",
+								"export"
+							],
+							"query": [
+								{
+									"key": "language",
+									"value": "TR"
+								},
+								{
+									"key": "exportType",
+									"value": "EXCEL"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Privilege",
+			"item": [
+				{
+					"name": "Privilege - list all",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filters\": [\r\n        {\r\n            \"fieldName\": \"name\",\r\n            \"value\": \"role1\",\r\n            \"operation\": \"EQ\",\r\n            \"type\": \"text\"\r\n        }\r\n    ],\r\n    \"pageable\": {\r\n        \"sortField\": \"id\",\r\n        \"sortOrder\": \"DESC\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/privileges/list-all",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"privileges",
+								"list-all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User - list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filters\": [\r\n        {\r\n            \"fieldName\": \"active\",\r\n            \"value\": \"true\",\r\n            \"operation\": \"equals\"\r\n        }\r\n    ],\r\n    \"pageable\": {\r\n        \"sortField\": \"id\",\r\n        \"sortOrder\": \"DESC\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/users/list",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - list custom query",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"username\": \"ahmet2\"\r\n    },\r\n    \"pageable\": {\r\n        \"sortField\": \"id\",\r\n        \"sortOrder\": \"DESC\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/users/list",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - find",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5055/api/users/user/1",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ahmet55\",\r\n    \"password\": \"123\",\r\n    \"name\": \"Ahmet\",\r\n    \"surname\": \"Okay\",\r\n    \"roleList\": [\r\n        {\r\n                \"id\": 1\r\n        },\r\n         {\r\n                \"id\": 2\r\n        }\r\n    ]    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/users/user",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"active\": true,\r\n    \"createDate\": \"2023-06-20T12:20:30.930+00:00\",\r\n    \"createUser\": 1,\r\n    \"username\": \"ahmet15\",\r\n    \"password\": \"123\",\r\n    \"name\": \"Ahmet 55 55\",\r\n    \"surname\": \"Okay 55 55\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/users/user",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"active\": true,\r\n    \"createDate\": \"2023-06-20T12:20:30.930+00:00\",\r\n    \"createUser\": 1,\r\n    \"username\": \"ahmet1\",\r\n    \"password\": \"123\",\r\n    \"name\": \"Ahmet 55 55\",\r\n    \"surname\": \"Okay 55 55\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/users/6809c257-b0fe-4817-900d-3be9cb563d99",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"6809c257-b0fe-4817-900d-3be9cb563d99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - export",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filters\": [\r\n    ],\r\n    \"pageable\": {\r\n        \"sortField\": \"id\",\r\n        \"sortOrder\": \"DESC\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/users/export",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"export"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - Reset Password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"ahmetokay14@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/users/reset-password",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "Test - list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filters\": [\r\n        {\r\n            \"fieldName\": \"active\",\r\n            \"value\": \"true\",\r\n            \"operation\": \"equals\"\r\n        }\r\n    ],\r\n    \"query\": {\r\n    },\r\n    \"pageable\": {\r\n        \"sortField\": \"id\",\r\n        \"sortOrder\": \"DESC\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/test/list",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"test",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - list custom query",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": {\r\n        \"username\": \"ahmet2\"\r\n    },\r\n    \"pageable\": {\r\n        \"sortField\": \"id\",\r\n        \"sortOrder\": \"DESC\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/users/list",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - find",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:5055/api/users/user/22",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"user",
+								"22"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"ahmet55\",\r\n    \"password\": \"123\",\r\n    \"name\": \"Ahmet\",\r\n    \"surname\": \"Okay\",\r\n    \"roleList\": [\r\n        {\r\n                \"id\": 5\r\n        },\r\n         {\r\n                \"id\": 2\r\n        }\r\n    ]    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/users/user",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"active\": true,\r\n    \"createDate\": \"2023-06-20T12:20:30.930+00:00\",\r\n    \"createUser\": 1,\r\n    \"username\": \"ahmet15\",\r\n    \"password\": \"123\",\r\n    \"name\": \"Ahmet 55 55\",\r\n    \"surname\": \"Okay 55 55\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/users/user",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"active\": true,\r\n    \"createDate\": \"2023-06-20T12:20:30.930+00:00\",\r\n    \"createUser\": 1,\r\n    \"username\": \"ahmet1\",\r\n    \"password\": \"123\",\r\n    \"name\": \"Ahmet 55 55\",\r\n    \"surname\": \"Okay 55 55\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/users/6809c257-b0fe-4817-900d-3be9cb563d99",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"6809c257-b0fe-4817-900d-3be9cb563d99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User - export",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filters\": [\r\n    ],\r\n    \"pageable\": {\r\n        \"sortField\": \"id\",\r\n        \"sortOrder\": \"DESC\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5055/api/users/export",
+							"host": [
+								"localhost"
+							],
+							"port": "5055",
+							"path": [
+								"api",
+								"users",
+								"export"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"ahmetokay14@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5050/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5050/auth/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Current User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5050/auth/get-current-user",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"auth",
+						"get-current-user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5050/auth/refresh-token",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"auth",
+						"refresh-token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Has Permission",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:5050/auth/has-permission",
+					"host": [
+						"localhost"
+					],
+					"port": "5050",
+					"path": [
+						"auth",
+						"has-permission"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eureka",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "ante123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "ante",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ahmet1\",\r\n    \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8761",
+					"host": [
+						"localhost"
+					],
+					"port": "8761"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setEnvironmentVariable(\"token\", jsonData.access_token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Debezium Postgres",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"postgres\",\r\n    \"config\": {\r\n        \"connector.class\": \"io.debezium.connector.postgresql.PostgresConnector\",\r\n        \"plugin.name\": \"pgoutput\",\r\n        \"tasks.max\": \"1\",\r\n        \"topic.prefix\": \"ante\",\r\n        \"database.hostname\": \"10.10.40.217\",\r\n        \"database.port\": \"5432\",\r\n        \"database.user\": \"postgres\",\r\n        \"database.password\": \"postgres\",\r\n        \"database.dbname\": \"ante_db\",\r\n        \"database.server.name\": \"postgres\",\r\n        \"table.include.list\": \"public.users\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/connectors/",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Debezium Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ante-connector\",\r\n    \"config\": {\r\n        \"connector.class\": \"io.debezium.connector.postgresql.PostgresConnector\",\r\n        \"tasks.max\": \"1\",\r\n        \"topic.prefix\": \"ante\",\r\n        \"database.user\": \"postgres\",\r\n        \"database.dbname\": \"ante_db\",\r\n        \"database.hostname\": \"10.10.40.217\",\r\n        \"database.port\": \"5432\",\r\n        \"database.password\": \"postgres\",\r\n        \"plugin.name\": \"pgoutput\",\r\n        \"table.include.list\": \"ante_db.users\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/connectors/elasticsearch-sink-users",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors",
+						"elasticsearch-sink-users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Debezium Elastic Sink - Role",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"elasticsearch-sink-role\",\r\n    \"config\": {\r\n        \"topics\": \"ante.public.role\",\r\n        \"name\": \"elasticsearch-sink-role\",\r\n        \"transforms.formatTS.type\": \"org.apache.kafka.connect.transforms.TimestampConverter$Value\",\r\n        \"tasks.max\": \"1\",\r\n        \"key.converter.schemas.enable\": \"false\",\r\n        \"connector.class\": \"io.confluent.connect.elasticsearch.ElasticsearchSinkConnector\",\r\n        \"type.name\": \"_doc\",\r\n        \"value.converter.schemas.enable\": \"false\",\r\n        \"transforms\": \"insertTS,formatTS\",\r\n        \"transforms.formatTS.field\": \"messageTS\",\r\n        \"transforms.formatTS.format\": \"yyyy-MM-dd'T'HH:mm:ss\",\r\n        \"key.ignore\": \"true\",\r\n        \"transforms.formatTS.target.type\": \"string\",\r\n        \"transforms.insertTS.timestamp.field\": \"messageTS\",\r\n        \"schema.ignore\": \"true\",\r\n        \"transforms.insertTS.type\": \"org.apache.kafka.connect.transforms.InsertField$Value\",\r\n        \"connection.url\": \"http://10.10.40.217:9200\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/connectors/",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Debezium Elastic Sink - User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"elasticsearch-sink-users\",\r\n    \"config\": {\r\n        \"topics\": \"ante.public.users\",\r\n        \"name\": \"elasticsearch-sink-users\",\r\n        \"transforms.formatTS.type\": \"org.apache.kafka.connect.transforms.TimestampConverter$Value\",\r\n        \"tasks.max\": \"1\",\r\n        \"key.converter.schemas.enable\": \"false\",\r\n        \"connector.class\": \"io.confluent.connect.elasticsearch.ElasticsearchSinkConnector\",\r\n        \"type.name\": \"_doc\",\r\n        \"value.converter.schemas.enable\": \"false\",\r\n        \"transforms\": \"insertTS,formatTS\",\r\n        \"transforms.formatTS.field\": \"messageTS\",\r\n        \"transforms.formatTS.format\": \"yyyy-MM-dd'T'HH:mm:ss\",\r\n        \"key.ignore\": \"true\",\r\n        \"transforms.formatTS.target.type\": \"string\",\r\n        \"transforms.insertTS.timestamp.field\": \"messageTS\",\r\n        \"schema.ignore\": \"true\",\r\n        \"transforms.insertTS.type\": \"org.apache.kafka.connect.transforms.InsertField$Value\",\r\n        \"connection.url\": \"http://10.10.40.217:9200\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8083/connectors/",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"connectors",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Elastic",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"connector.class\": \"io.debezium.connector.postgresql.PostgresConnector\",\r\n  \"connector.displayName\": \"PostgreSQL\",\r\n  \"topic.prefix\": \"ante_\",\r\n  \"database.user\": \"postgres\",\r\n  \"database.dbname\": \"ante_db\",\r\n  \"database.hostname\": \"10.10.40.217\",\r\n  \"database.password\": \"postgres\",\r\n  \"name\": \"postgres\",\r\n  \"connector.id\": \"postgres\",\r\n  \"plugin.name\": \"pgoutput\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:9200/my-index-000001",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"my-index-000001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Elastic Delete",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:9200/ante.public.users",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"ante.public.users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "initValue"
+		}
+	]
+}

@@ -1,5 +1,6 @@
 tr\com\ante\security\role\entity\RoleEntity.class
 tr\com\ante\security\privilege\query\PrivilegeQueryGenerator.class
+tr\com\ante\security\service\SessionService.class
 tr\com\ante\security\accesslog\model\AccessLogQueryModel.class
 tr\com\ante\security\role\manager\RoleOperationalManager.class
 tr\com\ante\security\accesslog\model\AccessLogModel.class
@@ -18,7 +19,6 @@ tr\com\ante\security\role\model\RoleModel.class
 tr\com\ante\security\user\query\UserQueryGenerator.class
 tr\com\ante\security\user\manager\UserSearchManager.class
 tr\com\ante\security\privilege\manager\PrivilegeSearchManager.class
-tr\com\ante\security\client\AuthenticationClient.class
 tr\com\ante\security\role\service\RoleServiceImpl.class
 tr\com\ante\security\user\entity\UserEntity.class
 tr\com\ante\security\role\manager\RoleOperationalManagerImpl.class
@@ -52,6 +52,7 @@ tr\com\ante\security\role\converter\RoleConverterImpl.class
 tr\com\ante\security\config\SecurityConfig.class
 tr\com\ante\security\filter\AccessLogFilter.class
 tr\com\ante\security\user\converter\UserConverter.class
+tr\com\ante\security\service\SessionServiceImpl.class
 tr\com\ante\security\accesslog\service\AccessLogServiceImpl.class
 tr\com\ante\security\privilege\model\PrivilegeModel.class
 tr\com\ante\security\model\TokenRecord.class

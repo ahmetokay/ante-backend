@@ -11,7 +11,7 @@ import tr.com.ante.security.role.model.RoleModel;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2023-08-16T15:56:42+0300",
+    date = "2023-11-06T20:41:49+0300",
     comments = "version: 1.5.5.Final, compiler: javac, environment: Java 20.0.1 (Oracle Corporation)"
 )
 @Component

@@ -108,12 +108,6 @@
         </dependency>
         <!--Swagger-->
 
-        <!--Redis-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <!--Redis-->
     </dependencies>
 
     <build>

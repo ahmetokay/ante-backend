@@ -1,4 +1,4 @@
-package tr.com.ante.service;
+package tr.com.ante.security.service;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -14,6 +14,9 @@ import java.util.concurrent.TimeUnit;
 @Component
 public class SessionServiceImpl implements SessionService {
 
+    private final String SESSION_ACCESS_TOKEN_PREFIX = "ACCESS_TOKEN_";
+    private final String SESSION_REFRESH_TOKEN_PREFIX = "REFRESH_TOKEN_";
+
     private final RedisTemplate redisTemplate;
 
     @Value("${spring.data.redis.access-token-ttl}")
@@ -24,6 +27,7 @@ public class SessionServiceImpl implements SessionService {
 
     public SessionServiceImpl(RedisTemplate redisTemplate) {
         this.redisTemplate = redisTemplate;
+
         valueOps = redisTemplate.opsForValue();
     }
 

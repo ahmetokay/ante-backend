@@ -1,5 +1,5 @@
-C:\projects\ante-backend\common\src\main\java\tr\com\ante\enm\ReportTypeEnum.java
-C:\projects\ante-backend\common\src\main\java\tr\com\ante\enm\ExportTypeEnum.java
-C:\projects\ante-backend\common\src\main\java\tr\com\ante\elastic\model\AccessLogDocument.java
-C:\projects\ante-backend\common\src\main\java\tr\com\ante\elastic\repository\AccessLogRepository.java
-C:\projects\ante-backend\common\src\main\java\tr\com\ante\view\Views.java
+D:\Software\personal\ante-backend\common\src\main\java\tr\com\ante\view\Views.java
+D:\Software\personal\ante-backend\common\src\main\java\tr\com\ante\elastic\repository\AccessLogRepository.java
+D:\Software\personal\ante-backend\common\src\main\java\tr\com\ante\enm\ReportTypeEnum.java
+D:\Software\personal\ante-backend\common\src\main\java\tr\com\ante\elastic\model\AccessLogDocument.java
+D:\Software\personal\ante-backend\common\src\main\java\tr\com\ante\enm\ExportTypeEnum.java

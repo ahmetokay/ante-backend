@@ -18,12 +18,12 @@ import org.springframework.stereotype.Component;
 import tr.com.ante.auth.model.AuthenticationResponse;
 import tr.com.ante.security.model.UserPrincipal;
 import tr.com.ante.security.service.JwtService;
+import tr.com.ante.security.service.SessionService;
 import tr.com.ante.security.user.converter.UserConverter;
 import tr.com.ante.security.user.entity.UserEntity;
 import tr.com.ante.security.user.model.UserModel;
 import tr.com.ante.security.user.repository.UserRepository;
 import tr.com.ante.security.utils.PermissionUtils;
-import tr.com.ante.service.SessionService;
 
 import java.io.IOException;
 import java.util.stream.Collectors;

@@ -1,8 +1,0 @@
-tr\com\ante\enm\ReportTypeEnum.class
-tr\com\ante\view\Views$Private.class
-tr\com\ante\elastic\model\AccessLogDocument.class
-tr\com\ante\enm\ExportTypeEnum.class
-tr\com\ante\elastic\repository\AccessLogRepository.class
-tr\com\ante\view\Views$Internal.class
-tr\com\ante\view\Views$Public.class
-tr\com\ante\view\Views.class

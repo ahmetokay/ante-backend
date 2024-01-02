@@ -56,8 +56,6 @@ spring:
         hibernate:
           envers:
             audit_table_suffix: _audit
-            revisionOnCollectionChange: true
-            revision_on_collection_change: true
     show-sql: false
   main:
     banner-mode: false

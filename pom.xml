@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.0</version>
+        <version>3.2.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -28,12 +28,12 @@
     </modules>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.version>1.0-SNAPSHOT</project.version>
         <querydsl.version>5.0.0</querydsl.version>
-        <spring-cloud.version>2022.0.3</spring-cloud.version>
+        <spring-cloud.version>2023.0.0</spring-cloud.version>
         <elasticsearch.version>7.17.12</elasticsearch.version>
     </properties>
 
@@ -116,7 +116,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-jpa</artifactId>
-                <version>3.1.0</version>
+                <version>3.2.0</version>
             </dependency>
 
             <dependency>
@@ -134,17 +134,17 @@
                 <version>${querydsl.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.hibernate.orm</groupId>
-                <artifactId>hibernate-envers</artifactId>
-                <version>6.2.5.Final</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.hibernate.orm</groupId>-->
+<!--                <artifactId>hibernate-envers</artifactId>-->
+<!--                <version>6.2.7.Final</version>-->
+<!--            </dependency>-->
 
-            <dependency>
-                <groupId>com.zaxxer</groupId>
-                <artifactId>HikariCP</artifactId>
-                <version>4.0.3</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.zaxxer</groupId>-->
+<!--                <artifactId>HikariCP</artifactId>-->
+<!--                <version>5.0.1</version>-->
+<!--            </dependency>-->
             <!--Database-->
 
             <dependency>
@@ -156,16 +156,16 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>1.18.28</version>
+                <version>1.18.30</version>
                 <scope>provided</scope>
             </dependency>
 
             <!--Swagger-->
-            <dependency>
-                <groupId>org.springdoc</groupId>
-                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-                <version>2.1.0</version>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>org.springdoc</groupId>-->
+<!--                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>-->
+<!--                <version>2.1.0</version>-->
+<!--            </dependency>-->
             <!--Swagger-->
 
             <dependency>

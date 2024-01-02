@@ -3,3 +3,8 @@
 
 /api-server/target
 /authentication-server/target
+/common/target
+/config-server/target
+/core/target
+/eureka-server/target
+/security/target

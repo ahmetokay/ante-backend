@@ -6,7 +6,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.time.StopWatch;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.annotation.Order;
 import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
@@ -58,7 +57,7 @@ public class AccessLogFilter extends OncePerRequestFilter {
             String responseBody = new String(responseWrapper.getContentAsByteArray(), StandardCharsets.UTF_8);
 
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-            if (authentication != null && authentication.getPrincipal() != null) {
+            if (authentication != null && authentication.getPrincipal() != null && authentication.getPrincipal() instanceof UserPrincipal) {
                 UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
 
                 AccessLogDocument accessLogDocument = new AccessLogDocument();

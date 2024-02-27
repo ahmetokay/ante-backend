@@ -17,7 +17,7 @@ eureka:
     registerWithEureka: true
     registryFetchIntervalSeconds: 3
     serviceUrl:
-      defaultZone: http://ante:ante123@10.10.50.147:8761/eureka
+      defaultZone: http://admin:123@10.10.50.147:8761/eureka
   instance:
     preferIpAddress: true
 spring:

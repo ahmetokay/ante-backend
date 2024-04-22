@@ -59,7 +59,7 @@ spring:
     show-sql: false
   liquibase:
     enabled: true
-    change-log: classpath:/db/changelog/db.changelog-master.xml
+    change-log: classpath:/db/changelog/changelog.sql
     default-schema: public
   main:
     banner-mode: false

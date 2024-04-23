@@ -61,6 +61,7 @@ spring:
     enabled: true
     change-log: classpath:/db/changelog/changelog.sql
     default-schema: public
+    drop-first: true
   main:
     banner-mode: false
 springdoc:

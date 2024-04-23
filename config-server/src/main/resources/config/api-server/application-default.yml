@@ -59,6 +59,11 @@ spring:
           envers:
             audit_table_suffix: _audit
     show-sql: false
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/changelog.sql
+    default-schema: public
+    drop-first: true
   main:
     banner-mode: false
   sql:

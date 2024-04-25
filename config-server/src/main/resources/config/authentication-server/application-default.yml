@@ -38,6 +38,7 @@ spring:
       connection-timeout: 30000
       idle-timeout: 600000
       max-lifetime: 1800000
+      schema: ante
   elasticsearch:
     uris: localhost:9200
   jackson:
@@ -60,7 +61,7 @@ spring:
   liquibase:
     enabled: true
     change-log: classpath:/db/changelog/changelog.xml
-    default-schema: public
+    default-schema: ante
     drop-first: false
   main:
     banner-mode: false

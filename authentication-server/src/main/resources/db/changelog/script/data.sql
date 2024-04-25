@@ -1,6 +1,8 @@
 -- liquibase formatted sql
 
--- changeset ahmet:1713874305788-1
+-- changeset ahmet:1713874305788-2
+-- preconditions onError:MARK_RAN onError:MARK_RAN
+-- preconditions-sql-check expectedResult:0 select count(*) from privilege
 INSERT INTO "privilege" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name", "title", "parent_id") VALUES (100000, TRUE, NULL, '2024-04-23 14:31:57.735221', 1, NULL, NULL, 'UM.*', 'Kullanıcı Yönetimi', NULL);
 INSERT INTO "privilege" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name", "title", "parent_id") VALUES (100100, TRUE, NULL, '2024-04-23 14:31:57.737136', 1, NULL, NULL, 'UM.01.*', 'Kullanıcı Yönetimi - 1', 100000);
 INSERT INTO "privilege" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name", "title", "parent_id") VALUES (100101, TRUE, NULL, '2024-04-23 14:31:57.738727', 1, NULL, NULL, 'UM.01.01', 'Kullanıcı Yönetimi - Listeleme', 100100);
@@ -22,24 +24,32 @@ INSERT INTO "privilege" ("id", "is_active", "unique_id", "create_date", "create_
 INSERT INTO "privilege" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name", "title", "parent_id") VALUES (300000, TRUE, NULL, '2024-04-23 14:31:57.76441', 1, NULL, NULL, 'AL.*', 'Erişim Logları', NULL);
 INSERT INTO "privilege" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name", "title", "parent_id") VALUES (300100, TRUE, NULL, '2024-04-23 14:31:57.766056', 1, NULL, NULL, 'AL.01.*', 'Erişim Logları - 1', 300000);
 INSERT INTO "privilege" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name", "title", "parent_id") VALUES (300101, TRUE, NULL, '2024-04-23 14:31:57.767754', 1, NULL, NULL, 'AL.01.01', 'Erişim Logları - Listeleme', 300100);
+-- rollback truncate privilege;
 
--- changeset ahmet:1713874305788-2
+-- changeset ahmet:1713874305788-3
+-- preconditions-sql-check expectedResult:0 select count(*) from role
 INSERT INTO "role" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name") VALUES (1, TRUE, NULL, '2024-04-23 14:31:57.727034', 1, NULL, NULL, 'ROLE1');
 INSERT INTO "role" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name") VALUES (2, TRUE, NULL, '2024-04-23 14:31:57.728761', 1, NULL, NULL, 'ROLE2');
 INSERT INTO "role" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name") VALUES (3, TRUE, NULL, '2024-04-23 14:31:57.730338', 1, NULL, NULL, 'ROLE3');
-
--- changeset ahmet:1713874305788-3
-INSERT INTO "users" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "email", "password", "name", "surname", "address") VALUES (1, TRUE, NULL, '2024-04-23 14:31:57.731834', 1, NULL, NULL, 'ahmetokay14@gmail.com', '$2a$10$uTi7e43Cs4FsHLdc6UHC8.DiSs4C4eEUJY/20Mw2eLNXxkg.ktIP6', 'Ahmet', 'Okay', NULL);
-INSERT INTO "users" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "email", "password", "name", "surname", "address") VALUES (2, TRUE, NULL, '2024-04-23 14:31:57.73359', 1, NULL, NULL, 'b@b.com', '$2a$10$uTi7e43Cs4FsHLdc6UHC8.DiSs4C4eEUJY/20Mw2eLNXxkg.ktIP6', 'Ahmet', 'Okay', NULL);
+-- rollback truncate role;
 
 -- changeset ahmet:1713874305788-4
+-- preconditions-sql-check expectedResult:0 select count(*) from user
+INSERT INTO "users" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "email", "password", "name", "surname", "address") VALUES (1, TRUE, NULL, '2024-04-23 14:31:57.731834', 1, NULL, NULL, 'ahmetokay14@gmail.com', '$2a$10$uTi7e43Cs4FsHLdc6UHC8.DiSs4C4eEUJY/20Mw2eLNXxkg.ktIP6', 'Ahmet', 'Okay', NULL);
+INSERT INTO "users" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "email", "password", "name", "surname", "address") VALUES (2, TRUE, NULL, '2024-04-23 14:31:57.73359', 1, NULL, NULL, 'b@b.com', '$2a$10$uTi7e43Cs4FsHLdc6UHC8.DiSs4C4eEUJY/20Mw2eLNXxkg.ktIP6', 'Ahmet', 'Okay', NULL);
+-- rollback truncate users;
+
+-- changeset ahmet:1713874305788-5
+-- preconditions-sql-check expectedResult:0 select count(*) from test
 INSERT INTO "test" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name") VALUES (1, TRUE, NULL, '2024-04-23 14:31:57.718484', 1, NULL, NULL, 'test1');
 INSERT INTO "test" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name") VALUES (2, TRUE, NULL, '2024-04-23 14:31:57.720722', 1, NULL, NULL, 'test2');
 INSERT INTO "test" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name") VALUES (3, TRUE, NULL, '2024-04-23 14:31:57.722427', 1, NULL, NULL, 'test3');
 INSERT INTO "test" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name") VALUES (4, TRUE, NULL, '2024-04-23 14:31:57.72396', 1, NULL, NULL, 'test4');
 INSERT INTO "test" ("id", "is_active", "unique_id", "create_date", "create_user", "update_date", "update_user", "name") VALUES (5, TRUE, NULL, '2024-04-23 14:31:57.725498', 1, NULL, NULL, 'test5');
+-- rollback truncate test;
 
--- changeset ahmet:1713874305788-5
+-- changeset ahmet:1713874305788-6
+-- preconditions-sql-check expectedResult:0 select count(*) from role_privilege
 INSERT INTO "role_privilege" ("fk_role_id", "fk_privilege_id") VALUES (1, 100000);
 INSERT INTO "role_privilege" ("fk_role_id", "fk_privilege_id") VALUES (1, 100100);
 INSERT INTO "role_privilege" ("fk_role_id", "fk_privilege_id") VALUES (1, 100101);
@@ -79,9 +89,11 @@ INSERT INTO "role_privilege" ("fk_role_id", "fk_privilege_id") VALUES (3, 200104
 INSERT INTO "role_privilege" ("fk_role_id", "fk_privilege_id") VALUES (3, 200105);
 INSERT INTO "role_privilege" ("fk_role_id", "fk_privilege_id") VALUES (3, 200106);
 INSERT INTO "role_privilege" ("fk_role_id", "fk_privilege_id") VALUES (3, 200107);
+-- rollback truncate role_privilege;
 
--- changeset ahmet:1713874305788-6
+-- changeset ahmet:1713874305788-7
+-- preconditions-sql-check expectedResult:0 select count(*) from user_role
 INSERT INTO "user_role" ("fk_user_id", "fk_role_id") VALUES (1, 1);
 INSERT INTO "user_role" ("fk_user_id", "fk_role_id") VALUES (1, 2);
 INSERT INTO "user_role" ("fk_user_id", "fk_role_id") VALUES (1, 3);
-
+-- rollback truncate user_role;

@@ -1,0 +1,31 @@
+plugins {
+    id 'java-gradle-plugin'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+}
+
+gradlePlugin {
+    plugins {
+        greeting123 {
+            id = 'test-plugin'
+            implementationClass = 'tr.com.ante.plugin.TestPlugin'
+        }
+    }
+}
+
+tasks.register('welcome') {
+    group 'Sample category'
+    description 'Tasks which shows a welcome message'
+    doLast {
+        println 'Welcome on the Baeldung!'
+    }
+}
+
+task printGroovyVersion(type : PrintToolVersionTask) {
+    tool 'groovy'
+}
